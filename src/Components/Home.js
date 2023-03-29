@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import { FreeCards, NFTCards } from "./Cards";
-import { getNFTS } from "./Interact";
+import { getLastNFTID, getNFT } from "./Interact";
 export const Home = () => {
   const [getIt, setGetIt] = useState(false);
   const [cards, setCards] = useState([]);
-
   useEffect(() => {
-    getNFTS().then((value) => {
-      const lastThreeCards = value.slice(-3);
-      setCards(lastThreeCards);
-      setGetIt(true);
-    });
+    const fetchData = async () => {
+      try {
+        const value = await getLastNFTID();
+        let NFTS = [];
+        const intvalue = parseInt(value, 16);
+        let maxCard = 0;
+        while (maxCard < 3 && intvalue - maxCard !== 0) {
+          const nft = await getNFT(intvalue - maxCard);
+          NFTS.push(nft);
+          maxCard++;
+        }
+        setCards(NFTS);
+        setGetIt(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
   return (
     <>

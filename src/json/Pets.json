@@ -1,6 +1,7 @@
 {
   "Cats": {
     "CornishRex": {
+      "Address": "0x1B0297b2215fab4C949632d8e6faE0F6092Fd006",
       "Menu": [
         ["Border", "Border"],
         ["Face", "Face"],
@@ -93,7 +94,7 @@
       ]
     },
     "BlueRussianDonwEars": {
-      "Address": "0x0aFeEDcb1eBFa6422C069Bc008a14cCAcFfE2FAE",
+      "Address": "0x3412c51A613ee041D6Bb6095E2C132c73E56af1A",
       "Menu": [
         ["Border", "Border"],
         ["Face", "Face"],
