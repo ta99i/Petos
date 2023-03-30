@@ -35,9 +35,7 @@ export const getNFT = async (id) => {
   NFT.title = obj.name;
   NFT.name = obj.attributes[0].value;
   NFT.breed = obj.attributes[1].value;
-  NFT.birthday = new Date(parseInt(obj.attributes[2].value))
-    .toISOString()
-    .slice(0, 10);
+  NFT.birthday = new Date(parseInt(1680134400000)).toISOString().slice(0, 10);
 
   return NFT;
 };

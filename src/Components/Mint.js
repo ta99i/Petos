@@ -5,9 +5,13 @@ import { Pet } from "./Pet";
 import "../Styles/Mint.css";
 
 const Mint = () => {
-  const [selectedPet, setSelectedPet] = useState(Pets.Cats.CornishRex);
-  const cats = [Pets.Cats.CornishRex, Pets.Cats.BlueRussianDonwEars];
-  const catsName = ["CornishRex", "Blue Russian Donw Ears"];
+  const [selectedPet, setSelectedPet] = useState(Pets.Dogs.GermanShepherd);
+  const cats = [
+    Pets.Cats.CornishRex,
+    Pets.Cats.BlueRussianDonwEars,
+    Pets.Dogs.GermanShepherd,
+  ];
+  const catsName = ["CornishRex", "Blue Russian Donw Ears", "German Shepherd"];
   function changePet(event) {
     setSelectedPet(cats[event.currentTarget.id]);
   }
