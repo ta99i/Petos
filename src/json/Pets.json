@@ -204,7 +204,7 @@
         ["Eye", "Left Eyebrow", "Right Eyebrow", "Eyes", "Eyes"],
         ["Nose", "Nose", "Nose"],
         ["Mouth", "Mouth", "Mouth"],
-        ["Left Eyes", "Right Eyes", "Left Eyes", "Right Eyes", "Left Eyes"]
+        ["Details", "Details", "Details", "Details", "Details"]
       ],
       "viewBox": "0 0 23 31",
       "Colors": [
