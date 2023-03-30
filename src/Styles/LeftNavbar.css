@@ -1,11 +1,14 @@
+
 .menu {
   position: fixed;
   left: 0;
   width: 300px;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   overflow-y: scroll;
+  top: 55px;
+  transition: .3s;
 }
 .lab {
   display: inline-block;
@@ -19,4 +22,18 @@
 }
 .acc {
   width: 100%;
+}
+
+@media only screen and (max-width:855px) {
+  .menu{
+       width: 170px;
+       overflow-x: hidden;
+       
+   }
+}
+@media only screen and (max-width:550px) {
+  .menu.transform{
+    position: absolute;
+    transform: translateX(-175px);
+  }
 }

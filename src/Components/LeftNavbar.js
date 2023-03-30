@@ -1,6 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/LeftNavbar.css";
+import "../Styles/Mint.css";
+
 import Accordion from "react-bootstrap/Accordion";
+
+
 
 const LeftNavbar = ({ colors, inputs, onColorChange, onInputChanges }) => {
   const handleColorChange = (event) => {
@@ -17,7 +21,8 @@ const LeftNavbar = ({ colors, inputs, onColorChange, onInputChanges }) => {
     });
   });
   return (
-    <div className="menu">
+    <>
+    <div className='menu'  >
       <Accordion defaultActiveKey={["0"]} alwaysOpen className="acc">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Border</Accordion.Header>
@@ -293,7 +298,9 @@ const LeftNavbar = ({ colors, inputs, onColorChange, onInputChanges }) => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+      
     </div>
+    </>
   );
 };
 
