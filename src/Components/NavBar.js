@@ -20,7 +20,7 @@ export const NavBar = () => {
   const handleSelect = (eventKey) => setShow(eventKey);
 
   return (
-    <div >
+    <div>
       <Navbar
         bg="dark"
         variant="dark"
@@ -28,13 +28,28 @@ export const NavBar = () => {
         onSelect={handleSelect}
       >
         <Container>
-          <Navbar.Brand>Catos</Navbar.Brand>
+          <Navbar.Brand>Petos</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link eventKey="0">Home</Nav.Link>
             <Nav.Link eventKey="1">Mint</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
-            {!isconected && <button onClick={onConnect} style={{outline: 'none',borderRadius:' 5px',fontWeight: '600',color:' #0d6efd',padding: '5px',background: 'white',border: 'solid white'}}>Connect to App</button>}
+            {!isconected && (
+              <button
+                onClick={onConnect}
+                style={{
+                  outline: "none",
+                  borderRadius: " 5px",
+                  fontWeight: "600",
+                  color: " #0d6efd",
+                  padding: "5px",
+                  background: "white",
+                  border: "solid white",
+                }}
+              >
+                Connect to App
+              </button>
+            )}
             {isconected && <Nav.Link eventKey="2">{address}</Nav.Link>}
           </Nav>
         </Container>
