@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Home } from "./Home";
 import { connect } from "./Interact";
 import Mint from "./Mint";
+import { NFTsFear } from "./NFTsFear";
 import { Wallet } from "./Wallet";
 
 export const NavBar = () => {
@@ -32,6 +33,7 @@ export const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link eventKey="0">Home</Nav.Link>
             <Nav.Link eventKey="1">Mint</Nav.Link>
+            <Nav.Link eventKey="2">NFTs</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
             {!isconected && (
@@ -50,13 +52,14 @@ export const NavBar = () => {
                 Connect to App
               </button>
             )}
-            {isconected && <Nav.Link eventKey="2">{address}</Nav.Link>}
+            {isconected && <Nav.Link eventKey="3">{address}</Nav.Link>}
           </Nav>
         </Container>
       </Navbar>
       <section>{show === "0" && <Home />}</section>
       <section>{show === "1" && <Mint />}</section>
-      <section>{show === "2" && <Wallet />}</section>
+      <section>{show === "2" && <NFTsFear />}</section>
+      <section>{show === "3" && <Wallet />}</section>
     </div>
   );
 };
