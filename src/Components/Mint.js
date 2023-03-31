@@ -5,18 +5,24 @@ import { Pet } from "./Pet";
 import "../Styles/Mint.css";
 
 const Mint = () => {
-  const [selectedPet, setSelectedPet] = useState(Pets.Dogs.GermanShepherd);
+  const [selectedPet, setSelectedPet] = useState(Pets.Dogs.Husky);
   const cats = [
     Pets.Cats.CornishRex,
     Pets.Cats.BlueRussianDonwEars,
     Pets.Dogs.GermanShepherd,
+    Pets.Dogs.Husky,
   ];
-  const catsName = ["CornishRex", "Blue Russian Donw Ears", "German Shepherd"];
+  const catsName = [
+    "CornishRex",
+    "Blue Russian Donw Ears",
+    "German Shepherd",
+    "Husky",
+  ];
   function changePet(event) {
     setSelectedPet(cats[event.currentTarget.id]);
   }
   return (
-    <div className='center-screen'>
+    <div className="center-screen">
       <div className="d-flex justify-content-center  ">
         {catsName.map((cat, id) => (
           <Button className="m-1" id={id} onClick={changePet}>
@@ -24,7 +30,7 @@ const Mint = () => {
           </Button>
         ))}
       </div>
-      <Pet cat={selectedPet}  />
+      <Pet cat={selectedPet} />
     </div>
   );
 };

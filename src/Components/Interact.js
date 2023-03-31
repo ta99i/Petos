@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { Alchemy, Network } from "alchemy-sdk";
-const contractAddress = "0xb955470e29592095D56BDf09eC2e4C20Cc7c8875"; // Replace with contract address
+const contractAddress = "0xD943A1132bd2406E9A237b12d964209103d63b3F"; // Replace with contract address
 const contractABI = require("../Contracts/Petos.sol/Petos.json");
 const settings = {
   apiKey: process.env.REACT_APP_ALCHEMY_KEY, // Replace with your Alchemy API Key.
@@ -34,8 +34,12 @@ export const getNFT = async (id) => {
   NFT.img = obj.image;
   NFT.title = obj.name;
   NFT.name = obj.attributes[0].value;
-  NFT.breed = obj.attributes[1].value;
-  NFT.birthday = new Date(parseInt(1680134400000)).toISOString().slice(0, 10);
+  NFT.pet = obj.attributes[1].value;
+  NFT.breed = obj.attributes[2].value;
+  NFT.sex = obj.attributes[3].value;
+  NFT.birthday = new Date(parseInt(obj.attributes[4].value))
+    .toISOString()
+    .slice(0, 10);
 
   return NFT;
 };
@@ -68,7 +72,7 @@ export const connect = async () => {
   await provider.send("eth_requestAccounts", []);
   return provider;
 };
-export const mint = async (address, colors, name, birthday) => {
+export const mint = async (address, colors, name, sex, birthday) => {
   if (window.ethereum) {
     try {
       const provider = await connect();
@@ -79,7 +83,7 @@ export const mint = async (address, colors, name, birthday) => {
       );
       const signer = provider.getSigner();
       const sContract = await contract.connect(signer);
-      sContract.mint(address, colors, name, birthday, { value: 500 });
+      sContract.mint(address, colors, name, sex, birthday, { value: 500 });
     } catch (e) {
       console.log(e.message);
     }

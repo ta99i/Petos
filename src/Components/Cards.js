@@ -28,7 +28,9 @@ export const NFTCards = ({ cards }) => {
             />
             <h5>{card.title}</h5>
             <h5>Name: {card.name}</h5>
+            <h5>Pet: {card.pet}</h5>
             <h5>Breed: {card.breed}</h5>
+            <h5>Sex: {card.sex}</h5>
             <h5>Birth Day: {card.birthday}</h5>
           </div>
         ))}
