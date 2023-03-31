@@ -5,16 +5,18 @@ import { Pet } from "./Pet";
 import "../Styles/Mint.css";
 
 const Mint = () => {
-  const [selectedPet, setSelectedPet] = useState(Pets.Dogs.Husky);
+  const [selectedPet, setSelectedPet] = useState(Pets.Cats.Siamese);
   const cats = [
     Pets.Cats.CornishRex,
     Pets.Cats.BlueRussianDonwEars,
+    Pets.Cats.Siamese,
     Pets.Dogs.GermanShepherd,
     Pets.Dogs.Husky,
   ];
   const catsName = [
     "CornishRex",
     "Blue Russian Donw Ears",
+    "Siamese",
     "German Shepherd",
     "Husky",
   ];
