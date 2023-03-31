@@ -15,9 +15,9 @@ export const Home = () => {
           const nft = await getNFT(intvalue - maxCard);
           NFTS.push(nft);
           maxCard++;
+          setCards(NFTS);
+          setGetIt(true);
         }
-        setCards(NFTS);
-        setGetIt(true);
       } catch (error) {
         console.log(error);
       }
