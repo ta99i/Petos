@@ -14,9 +14,10 @@ export const NFTsFear = () => {
           const nft = await getNFT(intvalue);
           NFTS.push(nft);
           intvalue--;
-          setGetIt(true);
-          setCards(NFTS);
         }
+
+        setGetIt(true);
+        setCards(NFTS);
       } catch (error) {
         console.log(error);
       }
