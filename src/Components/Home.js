@@ -23,7 +23,7 @@ export const Home = () => {
       }
     };
     fetchData();
-  }, [NFTS]);
+  }, [cards]);
   return (
     <>
       <div className="text-center">
