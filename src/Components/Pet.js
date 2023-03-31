@@ -5,17 +5,23 @@ import Button from "react-bootstrap/Button";
 import { mint } from "./Interact";
 import "../Styles/LeftNavbar.css";
 
+
 export const Pet = (props) => {
   const [color, setColor] = useState(props.cat.Colors);
   const [show, setShow] = useState(false);
   const [menu, setMenu] = useState(null);
   const [nftSvg, setNftSvg] = useState(null);
+  const [toggle,setToggle]=useState(false)
   let counter = 0;
+
+  const handleToggle=()=>{
+    setToggle(curr=>!toggle)
+  }
   useEffect(() => {
     setColor(props.cat.Colors);
     GenerateNFT();
     GenerateMenu();
-  }, [props, color]);
+  }, [props, color,toggle]);
   const handleColorChange = (event) => {
     console.log(event.target.id);
     color[event.target.id] = event.target.value;
@@ -37,7 +43,7 @@ export const Pet = (props) => {
     counter = 0;
 
     setMenu(
-      <div className="menu">
+      <div  className={ toggle ? 'menu' : "menu transform"}>
         <Accordion defaultActiveKey={["0"]} alwaysOpen className="acc">
           {props.cat.Menu.map((a, i) => (
             <Accordion.Item eventKey={i} key={i}>
@@ -80,7 +86,12 @@ export const Pet = (props) => {
   }
   return (
     <>
-      <div className="d-flex align-items-center flex-column">
+    <span className={ toggle ? "toggle-navbar transform-173 active" : 'toggle-navbar '} onClick={handleToggle }>
+      <span className="span1"></span>
+      <span className="span2"></span>
+      <span className="span3"></span>
+    </span>
+      <div className="d-flex align-items-center flex-column svg-width">
         {menu}
 
         {nftSvg}

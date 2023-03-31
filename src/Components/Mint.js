@@ -12,15 +12,15 @@ const Mint = () => {
     setSelectedPet(cats[event.currentTarget.id]);
   }
   return (
-    <div>
-      <div className="d-flex justify-content-center">
+    <div className='center-screen'>
+      <div className="d-flex justify-content-center  ">
         {catsName.map((cat, id) => (
           <Button className="m-1" id={id} onClick={changePet}>
             {cat}
           </Button>
         ))}
       </div>
-      <Pet cat={selectedPet} className="d-flex justify-content-center" />
+      <Pet cat={selectedPet}  />
     </div>
   );
 };
