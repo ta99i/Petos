@@ -32,12 +32,12 @@ export const Home = () => {
         {!getIt && <FreeCards />}
       </div>
       <section className="text-center ">
-        <h1>Catos is Back !</h1>
+        <h1>PetOs is Back !</h1>
         <p>Make NFT for your cat</p>
         <hr />
 
         <p>
-          Catos is A community-driven collectibles project based 100 % on
+          PetOs is A community-driven collectibles project based 100 % on
           Blockchain , All nfts are created on smart contracts by users for
           their cats ,90 % of profits go to animal charities
         </p>

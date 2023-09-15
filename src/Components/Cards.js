@@ -24,7 +24,7 @@ export const NFTCards = ({ cards }) => {
             <img
               className="card-image"
               src={card.img}
-              alt={"NFT Catos " + card.name + " " + card.breed}
+              alt={"NFT PetOs " + card.name + " " + card.breed}
             />
             <h5>{card.title}</h5>
             <h5>Name: {card.name}</h5>
